@@ -22,6 +22,9 @@ group :test, :development do
   gem 'launchy'
   gem 'pry'
   gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :test do
