@@ -2,5 +2,7 @@ class Mechanic < ActiveRecord::Base
 
   has_many :tickets
 
-  #also: name, email, cell number, payment info, encryption stuff 
+  has_many :messages, :through => :tickets
+
+  #also: name, email, cell number, payment info, encryption stuff
 end
