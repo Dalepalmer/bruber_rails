@@ -1,0 +1,43 @@
+<div class="row well well-sm">
+  <h4>Create Ticket</h4>
+  <form class="form" ng-submit="TicketsFactory.addTicket()" role="form">
+    <div class="form-group">
+      <label for="bike_location">Bike Location</label>
+      <input type="text" ng-model="TicketsFactory.ticketAddress" class="form-control" placeholder="Bike Location" name="bike_location">
+    </div>
+    <div class="form-group">
+      <label for="problem_notes">Issue</label>
+      <input type="text" ng-model="TicketsFactory.ticketProblems" class="form-control" placeholder="Describe your problems..." name="problem_notes">
+    </div>
+    <div class="form-group">
+      <label for="location_notes">Location Notes</label>
+      <input type="text" ng-model="TicketsFactory.ticketLocation" class="form-control" placeholder="Bike Location Notes" name="location_notes">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div class="row">
+  <h4>My Tickets</h4>
+  <table ng-repeat="item in tickets" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>
+          Ticket Number: {{item.id}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Address: {{item.address}} <br>
+          Problem: {{item.problem_notes}}<br>
+          Location Notes: {{item.location_notes}}<br>
+          Status: {{item.status}}<br>
+          User Rating: {{item.rating_value}}<br>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
