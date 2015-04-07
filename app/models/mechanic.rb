@@ -1,4 +1,4 @@
-class Mechanic < ActiveRecord::Base
+class Mechanic < User
 
   has_many :tickets
 
