@@ -12,5 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require angular
+//= require angular-animate
+//= require angular-cookies
+//= require angular-cookie
+//= require angular-mocks
+//= require angular-resource
+//= require angular-route
+//= require angular-touch
 //= require_tree .

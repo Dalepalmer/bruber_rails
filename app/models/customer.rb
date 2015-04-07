@@ -1,4 +1,5 @@
-class Customer < ActiveRecord::Base
+
+class Customer < User
 
   has_many :bicycles
   has_many :tickets
