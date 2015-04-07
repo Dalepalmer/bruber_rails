@@ -4,5 +4,6 @@ class Ticket < ActiveRecord::Base
   belongs_to :mechanic
   belongs_to :problem
 
-  #also has location & RATING INFO
+  validates :repair_status, :presence => true
+
 end

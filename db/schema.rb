@@ -21,16 +21,6 @@ ActiveRecord::Schema.define(version: 20150407174920) do
     t.integer "customer_id"
   end
 
-  create_table "customers", force: :cascade do |t|
-    t.string "email"
-    t.string "cell"
-  end
-
-  create_table "mechanics", force: :cascade do |t|
-    t.string "email"
-    t.string "cell"
-  end
-
   create_table "problems", force: :cascade do |t|
     t.string  "description"
     t.integer "estimate"
@@ -41,6 +31,7 @@ ActiveRecord::Schema.define(version: 20150407174920) do
     t.integer "bicycle_id"
     t.integer "mechanic_id"
     t.integer "problem_id"
+    t.string  "repair_status"
   end
 
 end
