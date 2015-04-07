@@ -7,7 +7,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'devise'
+gem 'devise_token_auth'
 gem 'omniauth'
 
 group :development do

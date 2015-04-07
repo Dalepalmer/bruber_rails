@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  devise_for :customers
-  devise_for :mechanics
+  mount_devise_token_auth_for 'User', at: '/auth'
+  
   root to: "home#index"
 end

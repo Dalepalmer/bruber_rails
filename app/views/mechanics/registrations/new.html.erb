@@ -4,8 +4,23 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :payment_info %>
+    <%= f.text_field :payment_info %>
   </div>
 
   <div class="field">
@@ -19,6 +34,11 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :terms_of_service %>
+    <%= f.check_box :terms_of_service %>
   </div>
 
   <div class="actions">
