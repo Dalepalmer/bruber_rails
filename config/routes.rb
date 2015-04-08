@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :tickets, :except => [:new, :edit]
+  resources :bicycles, :except => [:new, :edit]
 end
