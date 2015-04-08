@@ -11,6 +11,7 @@ class MechanicsController < ApplicationController
   # GET /mechanics/1
   def show
     @mechanic = Mechanic.find(params[:id])
+    @tickets = Ticket.find_by(mechanic_id: params[:id])
     respond_to do |format|
       format.html
       format.json { render json: @mechanic }

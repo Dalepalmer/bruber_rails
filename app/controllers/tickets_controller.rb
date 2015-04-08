@@ -12,9 +12,10 @@ class TicketsController < ApplicationController
   # GET /tickets/1
   def show
     @ticket = Ticket.find(params[:id])
+    @problems = Problem.find_by(ticket_id: @ticket.id)
     respond_to do |format|
       format.html
-      format.json { render json: @ticket }
+      format.json { render json: [@ticket, @problems] }
     end
   end
 
