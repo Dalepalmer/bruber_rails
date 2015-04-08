@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   resources :tickets, :except => [:new, :edit]
   resources :bicycles, :except => [:new, :edit]
+  resources :customers, :except => [:new, :edit]
+  resources :mechanics, :except => [:new, :edit]
+  resources :problems, :except => [:new, :edit]
 end

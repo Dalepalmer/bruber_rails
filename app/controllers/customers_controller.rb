@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
 
-  def index
+  def index #admin/CSR only?
     @customers = Customer.all
     respond_to do |format|
       format.html
@@ -11,9 +11,11 @@ class CustomersController < ApplicationController
   # GET /customers/1
   def show
     @customer = Customer.find(params[:id])
+    @bikes = Bicycle.find_by(customer_id: params[:id]) #change to current_user.id once devise works
+    @tickets = Ticket.find_by(customer_id: params[:id]) #change to current_user.id once devise works
     respond_to do |format|
       format.html
-      format.json { render json: @customer }
+      format.json { render json: [@customer, @bikes, @tickets] }
     end
   end
 
