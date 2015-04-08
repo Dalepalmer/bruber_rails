@@ -1,0 +1,23 @@
+<div class="row">
+  <h4>My Tickets</h4>
+  <table ng-repeat="item in tickets" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>
+          Ticket Number: {{item.id}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Address: {{item.address}} <br>
+          Problem: {{item.problem_notes}}<br>
+          Location Notes: {{item.location_notes}}<br>
+          Status: {{item.status}}<br>
+          User Rating: {{item.rating_value}}<br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
