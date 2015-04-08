@@ -15,7 +15,7 @@ class TicketsController < ApplicationController
     @problems = Problem.find_by(ticket_id: @ticket.id)
     respond_to do |format|
       format.html
-      format.json { render json: [@ticket, @problems] }
+      format.json { render json: [@ticket, @ticket.problem, @ticket.mechanic, @ticket.customer, @ticket.bicycle] }
     end
   end
 
@@ -31,11 +31,11 @@ class TicketsController < ApplicationController
   # POST /tickets
   def create
     @ticket = Ticket.new(ticket_params)
-
+    @problems = Problem.all
     if @ticket.save
       respond_to do |format|
         format.html
-        format.json { render json: @ticket, status: 201 }
+        format.json { render json: [@ticket, @problems], status: 201 }
       end
     else
       respond_to do |format|
