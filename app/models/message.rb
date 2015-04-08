@@ -30,11 +30,11 @@ class Message < ActiveRecord::Base
       ).execute
   end
 
-  def customer
-    ticket.customer
-  end
-
-  def mechanic
-    ticket.mechanic
-  end
+  # def customer
+  #   ticket.customer
+  # end
+  #
+  # def mechanic
+  #   ticket.mechanic
+  # end
 end
