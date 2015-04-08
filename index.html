@@ -3,18 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Dales Bike Mania</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
   <script src="lib/angular-ui-router.js"></script>
   <script src="app.js"></script>
   <script src="controllers/TicketsController.js"></script>
+  <script src="controllers/HomeController.js"></script>
+  <script src="controllers/UserSignInController.js"></script>
+  <script src="controllers/UserProfileController.js"></script>
   <script src="services/TicketsFactory.js"></script>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
   <div class="container">
-    <div ui-view></div>
+    <nav>
+      <li><a ui-sref="home">Home</a></li>
+      <li ng-show="!user.id"><a ui-sref="user_sign_in">Sign In</a></li>
+      <li ng-show="!user.id"><a ng-click='signOut()'>Sign Out</a></li>
+      <li ng-show="!user.id"><a ui-sref="view_user_profile">My Profile</a></li>
+      <li ng-show="!user.id"><a ui-sref="current_ticket">Current Ticket</a></li>
+      <li ng-show="!user.id"><a ui-sref="create_ticket">New Ticket</a></li>
+      <li><a ui-sref="/about">Our Mission</a></li>
+      <li><a ui-sref="/contact">Contact Us</a></li>
+    </nav>
+    <hr>
+    <div ui-view>
+    </div>
   </div>
 </body>
 </html>
