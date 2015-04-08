@@ -19,12 +19,14 @@ class Message < ActiveRecord::Base
 
   def send_email
     RestClient::Request.new(
-      :method => :post
+      :method => :post,
       :url => "https://api:#{ENV['MAILGUN_ACCOUNT_KEY']}@api.mailgun.net/v3/#{ENV['MAILGUN_ACCOUNT_DOMAIN']}/messages",
-      :from => "Bruber <postmaster@#{ENV['MAILGUN_ACCOUNT_DOMAIN']}>",
-      :to => recipient.email,
-      :subject => subject,
-      :text => body
+      :payload => {
+        :from => "Bruber <postmaster@#{ENV['MAILGUN_ACCOUNT_DOMAIN']}>",
+        :to => recipient.email,
+        :subject => subject,
+        :text => body
+      }
       ).execute
   end
 
