@@ -11,7 +11,7 @@ class Message < ActiveRecord::Base
       :user => ENV['TWILIO_ACCOUNT_SID'],
       :password => ENV['TWILIO_AUTH_TOKEN'],
       :payload => { :Body => body,
-                    :To => recipient.phone_number,
+                    :To => recipient.phone,
                     :From => ENV['USER_NUMBER']
                   }
       ).execute
