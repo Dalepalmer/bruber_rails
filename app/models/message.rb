@@ -17,6 +17,17 @@ class Message < ActiveRecord::Base
       ).execute
   end
 
+  def send_email
+    RestClient::Request.new(
+      :method => :post
+      :url => "https://api:#{ENV['MAILGUN_ACCOUNT_KEY']}@api.mailgun.net/v3/#{ENV['MAILGUN_ACCOUNT_DOMAIN']}/messages",
+      :from => "Bruber <postmaster@#{ENV['MAILGUN_ACCOUNT_DOMAIN']}>",
+      :to => recipient.email,
+      :subject => subject,
+      :text => body
+      ).execute
+  end
+
   def customer
     ticket.customer
   end
