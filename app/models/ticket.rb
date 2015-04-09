@@ -8,7 +8,7 @@ class Ticket < ActiveRecord::Base
   validates :repair_status, :presence => true
 
   after_create :generate_created_message
-  before_update :generate_update_message
+  before_update :generate_update_message  #note:before_update is deprecated!
 
   def generate_created_message
     message = Message.create({
