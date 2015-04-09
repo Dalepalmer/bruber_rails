@@ -37,6 +37,9 @@ class Ticket < ActiveRecord::Base
     #   body = "Huzzah! You have been rated xxxx stars"
     #   subject = "Huzzah! Rating has occured!"
     #   recipient_id = mechanic_id
+    else
+      puts "Ain't nothing changed, fool"
+      return true
     end
 
     message = Message.create({
