@@ -6,10 +6,22 @@ dalesBikeMania.config(function($stateProvider) {
     templateUrl: "partials/home.html"
   });
 
-  $stateProvider.state('create_ticket', {
-    url: "/user/new/ticket",
-    templateUrl: "partials/create_ticket.html",
-    controller: 'TicketsCtrl'
+  $stateProvider.state('about_us', {
+    url: "/about",
+    templateUrl: "partials/about_us.html",
+    controller: 'HomeCtrl'
+  });
+
+  $stateProvider.state('contact_us', {
+    url: "/contact",
+    templateUrl: "partials/contact_info.html",
+    controller: 'HomeCtrl'
+  });
+
+  $stateProvider.state('create_user', {
+    url: "/user/new/",
+    templateUrl: "partials/create_new_user.html",
+    controller: 'CreateUserCtrl'
   });
 
   $stateProvider.state('user_sign_in', {
@@ -24,9 +36,9 @@ dalesBikeMania.config(function($stateProvider) {
     controller: 'UserProfileCtrl'
   });
 
-  $stateProvider.state('view_ticket_history', {
-    url: "/users/tickets",
-    templateUrl: "partials/view_ticket_history.html",
+  $stateProvider.state('create_ticket', {
+    url: "/user/new/ticket",
+    templateUrl: "partials/create_ticket.html",
     controller: 'TicketsCtrl'
   });
 
@@ -34,6 +46,18 @@ dalesBikeMania.config(function($stateProvider) {
     url: "/users/tickets/current",
     templateUrl: "partials/current_ticket.html",
     controller: 'TicketsCtrl'
+  });
+
+  $stateProvider.state('view_ticket_history', {
+    url: "/users/tickets",
+    templateUrl: "partials/view_ticket_history.html",
+    controller: 'TicketsCtrl'
+  });
+
+  $stateProvider.state('create_mechanic', {
+    url: "/mechanic/new",
+    templateUrl: "partials/create_mechanic.html",
+    controller: 'NewMechanicCtrl'
   });
 
 });
