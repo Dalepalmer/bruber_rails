@@ -33,16 +33,6 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
     @problems = Problem.all
     if @ticket.save
-      id_faker = Ticket.all.length + 1
-      ticket_create_message = Message.create({
-        :ticket_id => @ticket.id
-        :body => "Your ticket has been created; when a mechanic picks it, you will get another message!",
-        :subject => "Your ticket (number #{id_faker} has been successfully created!"
-        :recipient_id => current_user.id,
-        :sender_id => (User.find_by(:name => "BRUBER_AUTO_MESSAGE")).id
-        })
-      ticket_create_message.send_sms
-      ticket_create_message.send_email
       respond_to do |format|
         format.html
         format.json { render json: [@ticket, @problems], status: 201 }
@@ -57,6 +47,7 @@ class TicketsController < ApplicationController
 
   # PATCH/PUT /tickets/1
   def update
+    @ticket = Ticket.find(params[:id])
     if @ticket.update(ticket_params)
       respond_to do |format|
         format.html

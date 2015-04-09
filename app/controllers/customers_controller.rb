@@ -29,7 +29,6 @@ class CustomersController < ApplicationController
   # POST /customers
   def create
     @customer = Customer.new(customer_params)
-
     if @customer.save
       respond_to do |format|
         format.html
