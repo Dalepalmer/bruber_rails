@@ -36,23 +36,32 @@ Bicycle.create({
   :customer_id => 2
   })
 
-# Ticket.create({
-#   :repair_status => "Mechanic en route",
-#   :customer_id => 1,
-#   :mechanic_id => 2
-#   })
-
 Problem.create({
   :description => "Flat front tire",
-  :estimate => "Arm"
+  :estimate => "20"
   })
 
 Problem.create({
   :description => "Flat back tire",
-  :estimate => "Leg"
+  :estimate => "25"
   })
 
 Problem.create({
   :description => "Broken Chain",
-  :estimate => "First born"
+  :estimate => "35"
+  })
+
+Ticket.create({
+  :repair_status => "Posted",
+  :problem_id => 1
+  })
+
+Ticket.create({
+  :repair_status => "Posted",
+  :problem_id => 2
+  })
+
+Ticket.create({
+  :repair_status => "Posted",
+  :problem_id => 3
   })
