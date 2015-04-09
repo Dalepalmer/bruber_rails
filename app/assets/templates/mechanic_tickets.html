@@ -1,0 +1,29 @@
+<h1>Unclaimed Tickets</h1>
+<div class="row">
+  <table ng-repeat="item in tickets | filter:{status:'Posted'}" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>
+          Ticket Number: {{item.id}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Submitted By: {{item.user.name}}
+          Address: {{item.user.address}} <br>
+          Problem: {{item.problem_notes}}<br>
+          Location Notes: {{item.location_notes}}<br>
+          Status: {{item.status}}<br>
+          User Rating: {{item.user.rating_value}}<br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button ng-click="claimTicket()">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

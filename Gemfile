@@ -6,10 +6,11 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'devise_token_auth'
 gem 'omniauth'
 gem 'rest-client'
+gem 'angular-rails-templates'
+gem 'bower-rails'
 
 group :production do
   gem 'rails_12factor'
