@@ -9,12 +9,16 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'devise_token_auth'
 gem 'omniauth'
+gem 'rest-client'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development do
   gem 'byebug'
   gem 'web-console'
   gem 'spring'
-
   gem 'quiet_assets'
 end
 

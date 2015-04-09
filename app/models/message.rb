@@ -11,17 +11,30 @@ class Message < ActiveRecord::Base
       :user => ENV['TWILIO_ACCOUNT_SID'],
       :password => ENV['TWILIO_AUTH_TOKEN'],
       :payload => { :Body => body,
-                    :To => recipient.phone_number,
+                    :To => recipient.phone,
                     :From => ENV['USER_NUMBER']
                   }
       ).execute
   end
 
-  def customer
-    ticket.customer
+  def send_email
+    RestClient::Request.new(
+      :method => :post,
+      :url => "https://api:#{ENV['MAILGUN_ACCOUNT_KEY']}@api.mailgun.net/v3/#{ENV['MAILGUN_ACCOUNT_DOMAIN']}/messages",
+      :payload => {
+        :from => "Bruber <postmaster@#{ENV['MAILGUN_ACCOUNT_DOMAIN']}>",
+        :to => recipient.email,
+        :subject => subject,
+        :text => body
+      }
+      ).execute
   end
 
-  def mechanic
-    ticket.mechanic
-  end
+  # def customer
+  #   ticket.customer
+  # end
+  #
+  # def mechanic
+  #   ticket.mechanic
+  # end
 end
