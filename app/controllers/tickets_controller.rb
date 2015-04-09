@@ -47,6 +47,7 @@ class TicketsController < ApplicationController
 
   # PATCH/PUT /tickets/1
   def update
+    @ticket = Ticket.find(params[:id])
     if @ticket.update(ticket_params)
       respond_to do |format|
         format.html

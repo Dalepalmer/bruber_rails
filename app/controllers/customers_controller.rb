@@ -11,11 +11,9 @@ class CustomersController < ApplicationController
   # GET /customers/1
   def show
     @customer = Customer.find(params[:id])
-    @bikes = Bicycle.find_by(customer_id: params[:id]) #change to current_user.id once devise works
-    @tickets = Ticket.find_by(customer_id: params[:id]) #change to current_user.id once devise works
     respond_to do |format|
       format.html
-      format.json { render json: [@customer, @bikes, @tickets] }
+      format.json { render json: [@customer, @customer.bicycles, @customer.tickets] }
     end
   end
 
@@ -31,7 +29,6 @@ class CustomersController < ApplicationController
   # POST /customers
   def create
     @customer = Customer.new(customer_params)
-
     if @customer.save
       respond_to do |format|
         format.html
