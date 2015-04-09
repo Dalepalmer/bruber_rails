@@ -1,9 +1,12 @@
 var dalesBikeMania = angular.module('dalesBikeMania', ['ui.router']);
 
-dalesBikeMania.config(function($stateProvider) {
+dalesBikeMania.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise("/");
+
   $stateProvider.state('home', {
     url: "/",
-    templateUrl: "partials/home.html"
+    templateUrl: "partials/home.html",
+    controller:'HomeCtrl'
   });
 
   $stateProvider.state('about_us', {
@@ -27,7 +30,7 @@ dalesBikeMania.config(function($stateProvider) {
   $stateProvider.state('user_sign_in', {
     url: "/sign_in",
     templateUrl: "partials/customer_login.html",
-    controller: 'UserSignInCtrl'
+    controller: 'UsersCtrl'
   });
 
   $stateProvider.state('view_user_profile', {

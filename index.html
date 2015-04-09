@@ -15,8 +15,11 @@
   <script src="controllers/AboutUsController.js"></script>
   <script src="controllers/ContactUsController.js"></script>
   <script src="controllers/NewMechanicController.js"></script>
+  <script src="controllers/UsersController.js"></script>
 
   <script src="services/TicketsFactory.js"></script>
+  <script src="services/UtilitiesFactory.js"></script>
+  <script src="services/UsersFactory.js"></script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
@@ -25,11 +28,11 @@
   <div class="container">
     <nav>
       <li><a ui-sref="home">Home</a></li>
-      <li ng-show="!user.id"><a ui-sref="user_sign_in">Sign In</a></li>
-      <li ng-show="!user.id"><a ng-click='signOut()'>Sign Out</a></li>
-      <li ng-show="!user.id"><a ui-sref="view_user_profile">My Profile</a></li>
-      <li ng-show="!user.id"><a ui-sref="current_ticket">Current Ticket</a></li>
-      <li ng-show="!user.id"><a ui-sref="create_ticket">New Ticket</a></li>
+      <li ng-show="!current_user.user_auth"><a ui-sref="user_sign_in">Sign In</a></li>
+      <li ng-show="current_user.user_auth"><a ng-click='signOut()'>Sign Out</a></li>
+      <li ng-show="current_user.user_auth"><a ui-sref="view_user_profile">My Profile</a></li>
+      <li ng-show="current_user.user_auth"><a ui-sref="current_ticket">Current Ticket</a></li>
+      <li ng-show="current_user.user_auth"><a ui-sref="create_ticket">New Ticket</a></li>
       <li><a ui-sref="about_us">Our Mission</a></li>
       <li><a ui-sref="contact_us">Contact Us</a></li>
     </nav>
