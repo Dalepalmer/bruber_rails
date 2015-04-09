@@ -7,13 +7,13 @@ class Ticket < ActiveRecord::Base
 
   validates :repair_status, :presence => true
 
-  after_create :create_created_message
-  after_update :create_update_message
+  after_create :generate_created_message
+  after_update :generate_update_message
 
   def generate_created_message
     message = Message.create({
       :ticket_id => id,
-      :body => "Your ticket has been created; when a mechanic picks it, you will get another message!",
+      :body => "Your ticket number #{id} has been created; once a mechanic picks it, you will get another message!",
       :subject => "Your ticket number #{id} has been successfully created!",
       :recipient_id => customer_id,
       :sender_id => 1

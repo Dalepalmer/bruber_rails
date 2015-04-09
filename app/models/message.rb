@@ -10,12 +10,13 @@ class Message < ActiveRecord::Base
       :url => "https://api.twilio.com/2010-04-01/Accounts/#{ENV['TWILIO_ACCOUNT_SID']}/Messages.json",
       :user => ENV['TWILIO_ACCOUNT_SID'],
       :password => ENV['TWILIO_AUTH_TOKEN'],
-      :payload => { :Body => body,
+      :payload => { :Body => subject,
                     :To => recipient.phone,
                     :From => ENV['USER_NUMBER']
                   }
       ).execute
   end
+
 
   def send_email
     RestClient::Request.new(
