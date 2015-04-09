@@ -2,6 +2,12 @@ dalesBikeMania.controller('UsersCtrl', function UsersCtrl($scope, $rootScope, $s
   $scope.users = UsersFactory.users;
   $scope.UsersFactory = UsersFactory;
 
+  function Users($scope, $http) {
+    $http.get('/customers/1').success(function(data) {
+      $scope.users = data;
+    });
+  }
+
   $scope.signIn = function() {
     $rootScope.current_user = UtilitiesFactory.findById(UsersFactory.users, $scope.userName, $scope.passWord);
     if ($rootScope.current_user == null ) {
