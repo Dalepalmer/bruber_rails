@@ -8,7 +8,7 @@ class Ticket < ActiveRecord::Base
   validates :repair_status, :presence => true
 
   after_create :generate_created_message
-  after_update :generate_update_message
+  before_update :generate_update_message
 
   def generate_created_message
     message = Message.create({
@@ -23,7 +23,32 @@ class Ticket < ActiveRecord::Base
   end
 
   def generate_update_message
+    @mechanic_name = Mechanic.find(mechanic_id).name || "ERROR-MECHANICNAME FAIL"
+    @customer_name = Customer.find(customer_id).name || "ERROR-CUSTOMERNAME FAIL"
+    if repair_status_changed? && repair_status == "Claimed"
+      body = "Huzzah! Your ticket number #{id} has been claimed! Mechanic #{@mechanic_name} is on the case!"
+      subject = "Huzzah! Your ticket number #{id} has been claimed!"
+      recipient_id = customer_id
+    elsif repair_status_changed? && repair_status == "Closed"
+      body = "Huzzah! Your ticket number #{id} has been closed! #{@mechanic_name} has fixed yo' bike!"
+      subject = "Huzzah! Bike is fixed!"
+      recipient_id = customer_id
+    # elsif repair_status_changed? && repair_status == "Rated"
+    #   body = "Huzzah! You have been rated xxxx stars"
+    #   subject = "Huzzah! Rating has occured!"
+    #   recipient_id = mechanic_id
+    end
 
+    message = Message.create({
+      :ticket_id => id,
+      :sender_id => 1,
+      :body => body,
+      :subject => subject,
+      :recipient_id => recipient_id
+    })
+
+    message.send_sms
+    message.send_email
   end
 
 

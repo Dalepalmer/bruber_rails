@@ -17,7 +17,6 @@ class Message < ActiveRecord::Base
       ).execute
   end
 
-
   def send_email
     RestClient::Request.new(
       :method => :post,
