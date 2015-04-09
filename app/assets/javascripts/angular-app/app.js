@@ -36,7 +36,7 @@ dalesBikeMania.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('view_user_profile', {
     url: "/users/userid",
     templateUrl: "user_profile_page.html",
-    controller: 'UserProfileCtrl'
+    controller: 'UsersCtrl'
   });
 
   $stateProvider.state('create_ticket', {
@@ -60,7 +60,7 @@ dalesBikeMania.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('create_mechanic', {
     url: "/mechanic/new",
     templateUrl: "create_mechanic.html",
-    controller: 'NewMechanicCtrl'
+    controller: 'MechanicsCtrl'
   });
 
   $stateProvider.state('mechanic_sign_in', {

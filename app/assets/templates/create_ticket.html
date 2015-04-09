@@ -14,9 +14,11 @@
       <input type="text" ng-model="TicketsFactory.ticketLocation" class="form-control" placeholder="Bike Location Notes" name="location_notes">
     </div>
     <div class="form-group">
-      <label for="bike">Your Bike (drop down)</label>
+      <label for="bike">Your Bike</label>
       <input type="text" ng-model="TicketsFactory.bike" class="form-control" placeholder="Bike Location Notes" name="location_notes">
     </div>
     <button type="submit">Submit</button>
+
+    <select ng-model="problemOptions" ng-options="label for item in problemOptions"></select>
   </form>
 </div>
