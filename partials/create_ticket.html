@@ -1,0 +1,22 @@
+<div class="row">
+  <h4>Create Ticket</h4>
+  <form class="form" ng-submit="TicketsFactory.addTicket()" role="form">
+    <div class="form-group">
+      <label for="bike_location">Bike Location</label>
+      <input type="text" ng-model="TicketsFactory.ticketAddress" class="form-control" placeholder="Bike Location" name="bike_location">
+    </div>
+    <div class="form-group">
+      <label for="problem_notes">Issue (drop down)</label>
+      <input type="text" ng-model="TicketsFactory.ticketProblems" class="form-control" placeholder="Describe your problems..." name="problem_notes">
+    </div>
+    <div class="form-group">
+      <label for="location_notes">Location Notes</label>
+      <input type="text" ng-model="TicketsFactory.ticketLocation" class="form-control" placeholder="Bike Location Notes" name="location_notes">
+    </div>
+    <div class="form-group">
+      <label for="bike">Your Bike (drop down)</label>
+      <input type="text" ng-model="TicketsFactory.bike" class="form-control" placeholder="Bike Location Notes" name="location_notes">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
