@@ -1,5 +1,7 @@
 class TicketsController < ApplicationController
 
+  skip_before_filter  :verify_authenticity_token
+
   # GET /tickets, used when loggedin mechanics need to hunt for all the open tickets
   def index
     @tickets = Ticket.all
@@ -34,8 +36,8 @@ class TicketsController < ApplicationController
     @problems = Problem.all
     if @ticket.save
       respond_to do |format|
-        format.html
-        format.json { render json: [@ticket, @problems], status: 201 }
+        format.html { render json: [@ticket, @problems], status: 201 }
+        format.json
       end
     else
       respond_to do |format|

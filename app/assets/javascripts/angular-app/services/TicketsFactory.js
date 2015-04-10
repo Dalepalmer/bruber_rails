@@ -1,15 +1,6 @@
-dalesBikeMania.factory('TicketsFactory', function TicketsFactory () {
+dalesBikeMania.factory('TicketsFactory', function TicketsFactory ($http) {
   var factory = {}
-  factory.tickets = [
-    { address: '1234 Someplace Drive, Portland Oregon 97214', id: 11,
-      status: 'Current', mechanic_id: 1, customer_id: 1, problem_notes: "What is a bike?",
-      bicycle_id: 1, location_notes: "In the Garage", rating_value: 1, rating_text: "neu"
-    },
-    { address: '1234 Someplace Drive, Portland Oregon 97214', id: 11,
-      status: 'Claimed', mechanic_id: 1, customer_id: 1, problem_notes: "What is a bike?",
-      bicycle_id: 1, location_notes: "In the Garage", rating_value: 1, rating_text: "neu"
-    }
-  ];
+
   factory.addTicket = function() {
     factory.tickets.push({ address: factory.ticketAddress, id: factory.tickets.length + 1,
                            status: "unclaimed", mechanic_id: null, customer_id: 'current_user.id',
