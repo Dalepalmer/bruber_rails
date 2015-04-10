@@ -6,6 +6,7 @@ class TicketsController < ApplicationController
   # GET /tickets, used when loggedin mechanics need to hunt for all the open tickets
   def index
     @tickets = Ticket.all
+    @users = User.all
     respond_to do |format|
       format.html
       format.json { render json: @tickets }

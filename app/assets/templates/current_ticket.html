@@ -1,30 +1,27 @@
-<h1>Current Ticket</h1>
-<div class="row">
-          {{ users }}
-  <h4>My Tickets</h4>
-  <table ng-repeat="item in tickets | filter:{repair_status:'Claimed'}" class="table table-bordered">
-    <thead>
-      <tr>
-        <th>
-          Ticket Number: {{item.id}}
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          Address: {{item.address}} <br>
-          Problem: {{item.problem_notes}}<br>
-          Location Notes: {{item.location_notes}}<br>
-          Status: {{item.status}}<br>
-          <span ng-show="ticket.claimed">{{something.mechanic.name}}</span><br>
-          <span ng-show="ticket.claimed">{{something.something.timePickedUp}}</span><br>
-          User Rating: {{item.rating_value}}<br>
+<div class="second-navigation">
+  <a ui-sref="home">Home</a>
+  <a ui-sref="user_profile_page">Profile</a>
+  <a ui-sref="create_ticket">New Ticket</a>
+  <a ui-sref="#">Log Out</a>
+</div>
+    <div class="bikeimage">
+    </div>
 
-          <button ng-click="closeTicket(item)">Close Ticket</button>
 
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<h1 class="current-ticket">Current Ticket</h1>
+
+<div class="container">
+  <div class="row">
+    <div ng-repeat="item in tickets | limitTo: 1 " class="col-md-6 ticket-details">
+
+        <p><span class="details">Address:</span> 500 Dale's House <p>
+        <p><span class="details">Problem:</span> Broken Chain <p>
+        <p><span class="details">Location Notes:</span> Behind Garage <p>
+        <p><span class="details">Status:</span> {{item.repair_status}} <p>
+        <p><span class="details">Mechanic Name:</span> Tyler's Repair Service<p>
+        <p><span class="details">Time:</span> Eventually<p>
+        <p><span class="details">User Rating:</span> 5<p>
+
+    </div>
+  </div>
 </div>

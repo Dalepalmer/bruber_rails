@@ -6,26 +6,32 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Poiret+One|Megrim|Gruppo|Raleway|Oxygen' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<div class="container">
   <nav>
-    <li><a ui-sref="home">Home</a></li>
+    <div class="title"><a ui-sref="home">Br&uuml;ber</a></div>
+    <li><a ui-sref="about_us">Our Mission</a></li>
+    <li><a ui-sref="contact_us">Contact Us</a></li>
+
+  </nav>
+
+  <header>
+  </header>
+
+    <!-- <li><a ui-sref="home">Home</a></li>
     <li ng-show="!current_user.user_auth"><a ui-sref="user_sign_in">Sign In</a></li>
     <li ng-show="current_user.user_auth"><a ng-click='signOut()'>Sign Out</a></li>
     <li ng-show="current_user.user_auth"><a ui-sref="view_user_profile">My Profile</a></li>
     <li ng-show="current_user.user_auth"><a ui-sref="current_ticket">Current Ticket</a></li>
-    <li ng-show="current_user.user_auth"><a ui-sref="create_ticket">New Ticket</a></li>
-    <li><a ui-sref="about_us">Our Mission</a></li>
-    <li><a ui-sref="contact_us">Contact Us</a></li>
-  </nav>
-  <hr>
+    <li ng-show="current_user.user_auth"><a ui-sref="create_ticket">New Ticket</a></li> -->
+
   <div ui-view>
   </div>
-</div>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 </body>
 </html>

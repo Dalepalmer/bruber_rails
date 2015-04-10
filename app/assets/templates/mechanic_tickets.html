@@ -1,29 +1,30 @@
+<div class="second-navigation">
+  <a ui-sref="home">Home</a>
+  <a ui-sref="#">Log Out</a>
+
+</div>
+
 <h1>Unclaimed Tickets</h1>
-<div class="row">
-  <table ng-repeat="item in tickets | filter: { repair_status: 'Posted' }" class="table table-bordered">
-    <thead>
-      <tr>
-        <th>
-          Ticket Number: {{item.id}}
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          Submitted By: {{current_user.name}}<br>
-          Address: {{item.location}} <br>
-          Problem: {{item.problem_id}}<br>
-          Location Notes: Notes Go Here<br>
-          Status: {{item.repair_status}}<br>
-          User Rating: {{item.user.rating_value}}<br>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <button ng-click="claimTicket()">
-        </td>
-      </tr>
-    </tbody>
-  </table>
+
+<div class="container">
+  <div class="row tickets">
+    <ul ng-repeat="item in tickets">
+      <li>
+        <div class="each-ticket">
+
+          <div class="col-sm-12 ticket-info">
+            <h3>Ticket Number: {{item.id}}</h3>
+
+            <p><span class="details">Submitted By:</span> {{item.user.name}}</p>
+            <p><span class="details">Address: </span>{{item.location}} </p>
+            <p><span class="details">Problem: </span>{{item.problem_id}}</p>
+            <p><span class="details">Location Notes: </span></p>
+            <p><span class="details">Status: </span>{{item.repair_status}}</p>
+            <p><span class="details">User Rating: </span>{{item.user.rating_value}}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
 </div>

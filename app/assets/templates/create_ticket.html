@@ -1,18 +1,46 @@
-<div class="row">
-  <h4>Create Ticket</h4>
-  <form class="form" ng-submit="addTicket()" role="form">
-    <div class="form-group">
-      <label for="bike_location">Bike Location</label>
-      <input type="text" ng-model="ticketAddress" class="form-control" placeholder="Bike Location" name="bike_location">
+
+<div class="second-navigation">
+  <a ui-sref="view_user_profile">Profile</a>
+  <a ui-sref="current_ticket">Current Ticket</a>
+  <a ui-sref="view_ticket_history">Past Tickets</a>
+  <a ui-sref="sign_out">Log Out</a>
+</div>
+
+
+<div class="container">
+  <div class="row login">
+    <div class="col-sm-12">
+      <h1>New Ticket</h1>
+      <form class="form-horizontal" ng-submit="addTicket()" role="form">
+        <div class="form-group">
+          <label for="bike_location" class="col-sm-4">Bike Location</label>
+          <div class="col-sm-6">
+            <input class="form-control" ng-model="ticketAddress" type="text" name="bike_location" /><br />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="location_notes" class="col-sm-4">Location Notes</label>
+          <div class="col-sm-6">
+            <input class="form-control" ng-model="ticketLocation" type="text" name="location_notes" /><br />
+          </div>
+        </div>
+      <div class="form-group">
+        <label for="problem" class="col-sm-4">Problem</label>
+        <div class="col-sm-6">
+          <input class="form-control" ng-model="ticketProblems" type="text" name="problem" /><br />
+        </div>
+      </div>
+        <div class="form-group">
+          <label for="bike" class="col-sm-4">Your Bike</label>
+          <div class="col-sm-6">
+            <input class="form-control" ng-model="bike" type="text" name="bike" /><br />
+          </div>
+        </div>
+        <div class="submit-container">
+          <input class="submit-button" type="submit" value="Submit" />
+        </div>
+      </form>
+
     </div>
-    <div class="form-group">
-      <label for="problem_notes">Issue (drop down)</label>
-      <input type="text" ng-model="ticketProblems" class="form-control" placeholder="Describe your problems..." name="problem_notes">
-    </div>
-    <div class="form-group">
-      <label for="location_notes">Location Notes</label>
-      <input type="text" ng-model="ticketLocation" class="form-control" placeholder="Bike Location Notes" name="location_notes">
-    </div>
-    <button type="submit">Submit</button>
-  </form>
+  </div>
 </div>

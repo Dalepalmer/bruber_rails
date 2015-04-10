@@ -1,20 +1,31 @@
-<div class="row">
-  <span class="glyphicon glyphicon-user"></span>
-  <h3>{{current_user.name}}</h3>
-  <hr>
+<div class="second-navigation">
+  <a ui-sref="home">Home</a>
+  <a ui-sref="create_ticket">New Ticket</a>
+  <a ui-sref="current_ticket">Current Ticket</a>
+  <a ui-sref="#">Log Out</a>
 </div>
 
-<div class="row">
-  <div class="col-md-6">
-    <h3>User Details</h3>
-    <p>{{current_user.name}}</p>
-    <a ui-sref="futureRoute">Edit Profile</a>
+<div class="container">
+  <div class="row profile">
+    <h3 class="name">{{current_user.name}}</h3>
+
+  <div class="col-md-4 profile-picture">
   </div>
-  <div class="col-md-6">
-    <h3>Tickets</h3>
-    <p>{{data.stuff}}</p>
-    <a ui-sref="create_ticket">New Ticket</a>
-    <a ui-sref="current_tickets">Current Ticket</a>
-    <a ui-sref="view_ticket_history">Ticket History</a>
+  <div class="col-md-4 profile-details">
+    <p><span class="details">Email:</span>{{current_user.email}}</p>
+    <p><span class="details">Phone:</span>{{current_user.phone}}</p>
+    <p><span class="details">Card:</span>************5054</p>
+
+    <h2> Your Bikes </h2>
+
+    <ul>
+      <li>-1950 Surley Cross Check</li>
+    </ul>
+    <a href="#" class="md-button">Add a Bike</a>
+  </div>
+    <div class="col-md-4 buttons">
+      <a ui-sref="create_ticket" class="lg-button">New Ticket</a>
+      <a ui-sref="current_ticket" class="lg-button">Current Ticket</a>
+    </div>
   </div>
 </div>
