@@ -1,26 +1,29 @@
-<h1>Current Ticket</h1>
-<div class="row">
-  <h4>My Tickets</h4>
-  <table ng-repeat="item in tickets | filter:{status:'!Completed'}" class="table table-bordered">
-    <thead>
-      <tr>
-        <th>
-          Ticket Number: {{item.id}}
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          Address: {{item.address}} <br>
-          Problem: {{item.problem_notes}}<br>
-          Location Notes: {{item.location_notes}}<br>
-          Status: {{item.status}}<br>
-          <span ng-show="ticket.claimed">{{something.mechanic.name}}</span><br>
-          <span ng-show="ticket.claimed">{{something.something.timePickedUp}}</span><br>
-          User Rating: {{item.rating_value}}<br>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="second-navigation">
+  <a ui-sref="home">Home</a>
+  <a ui-sref="user_profile_page">Profile</a>
+  <a ui-sref="create_ticket">New Ticket</a>
+  <a ui-sref="#">Log Out</a>
 </div>
+    <div class="bikeimage">
+    </div>
+
+
+<h1 class="current-ticket">Current Ticket</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 ticket-details">
+
+  <ng-repeat="item in tickets | filter:{status:'!Completed'}" class="table table-bordered">
+
+
+
+          <p><span class="details">Address:</span> {{item.address}} <p>
+          <p><span class="details">Problem:</span> {{item.problem_notes}}<p>
+          <p><span class="details">Location Notes:</span> {{item.location_notes}}<p>
+          <p><span class="details">Status:</span> {{item.status}}<p>
+          <span ng-show="ticket.claimed">{{something.mechanic.name}}<p>
+          <span ng-show="ticket.claimed">{{something.something.timePickedUp}}<p>
+          <p><span class="details">User Rating:</span> {{item.rating_value}}<p>
+
+    </div>

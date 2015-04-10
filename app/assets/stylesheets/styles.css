@@ -292,6 +292,14 @@ label {
 
 }
 
+.md-button:hover {
+  background-color: #154765;
+  box-shadow: #2F6180 1px 1px 0px 0px inset;
+  border: 1px solid #0A2230;
+  text-decoration: none;
+  color: #fff;
+}
+
 .lg-button {
   border-radius: 3px;
   font-size: 18px;
@@ -309,6 +317,14 @@ label {
   font-family: 'Raleway', sans-serif;
 }
 
+.lg-button:hover {
+  background-color: #154765;
+  box-shadow: #2F6180 1px 1px 0px 0px inset;
+  border: 1px solid #0A2230;
+  text-decoration: none;
+  color: #fff;
+}
+
 .profile {
   margin-top: 70px;
 }
@@ -318,6 +334,10 @@ label {
   font-size: 30px;
   text-align: center;
   padding-top: 25px;
+}
+
+.profile-details {
+  margin-left: 200px;
 }
 
 .profile-details h2 {
@@ -330,7 +350,14 @@ label {
 .profile-details p {
   margin-top: 20px;
   margin-bottom: 10px;
+}
 
+.profile-details li {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  color: #154765;
 }
 
 .profile-picture {
@@ -341,6 +368,10 @@ label {
   margin-right: auto;
   margin-left: auto;
 
+}
+
+.buttons {
+  margin-left: 20px;
 }
 
 select {
@@ -360,6 +391,22 @@ option {
   font-family: 'Raleway', sans-serif;
 }
 
+.bikeimage {
+  height: 700px;
+  width: 400px;
+  float: left;
+  display: inline-block;
+  background-image: url('bike.jpg');
+  background-size: cover;
+}
+
+.current-ticket {
+  margin-right: 80px;
+}
+
+.ticket-details {
+  margin-left: 20%;
+}
 /*dark blue: 154765
 regular blue: 5C7C8D
 light bg tan: EBE7DC
