@@ -15,7 +15,7 @@ class TicketsController < ApplicationController
     @problems = Problem.find_by(ticket_id: @ticket.id)
     respond_to do |format|
       format.html
-      format.json { render json: [@ticket, @ticket.problem, @ticket.mechanic, @ticket.customer, @ticket.bicycle] }
+      format.json { render json: [@ticket, @ticket.problem, @ticket.mechanic, @ticket.customer, @ticket.bicycle, @ticket.location] }
     end
   end
 

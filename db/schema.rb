@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150410170711) do
     t.integer "mechanic_id"
     t.integer "problem_id"
     t.string  "repair_status"
+    t.string  "location"
   end
 
   create_table "users", force: :cascade do |t|

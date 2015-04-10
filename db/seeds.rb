@@ -31,6 +31,17 @@ User.create({
   :type => "Mechanic"
 })
 
+User.create({
+  :uid => "imafake",
+  :provider => "imafake",
+  :name => "Ima Fake",
+  :email => "waldowv@yahoo.com",
+  :phone => "5412311102",
+  :password => "password",
+  :encrypted_password => "password",
+  :type => "Customer"
+})
+
 Bicycle.create({
   :description => "1950 Surley Cross Check",
   :customer_id => 2
@@ -53,15 +64,21 @@ Problem.create({
 
 Ticket.create({
   :repair_status => "Posted",
-  :problem_id => 1
+  :problem_id => 1,
+  :customer_id => 4,
+  :location => "123 Fake St"
   })
 
 Ticket.create({
   :repair_status => "Posted",
-  :problem_id => 2
+  :problem_id => 2,
+  :customer_id => 4,
+  :location => "420 Snoop Dogg Lane"
   })
 
 Ticket.create({
   :repair_status => "Posted",
-  :problem_id => 3
+  :problem_id => 3,
+  :customer_id => 4,
+  :location => "867 Fivethreeohnine Ave"
   })
