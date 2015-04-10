@@ -1,4 +1,6 @@
-dalesBikeMania.controller('UsersCtrl', function UsersCtrl($scope, $rootScope, $stateParams, $location, TicketsFactory, UsersFactory, UtilitiesFactory, $http) {
+dalesBikeMania.controller('UsersCtrl', function UsersCtrl($scope, $rootScope, $stateParams, $location, UsersFactory, UtilitiesFactory, $http) {
+  $scope.UtilitiesFactory = UtilitiesFactory
+  $scope.users = [];
 
   $http.get('/customers.json').
   success(function(data, status, headers, config) {
@@ -11,7 +13,7 @@ dalesBikeMania.controller('UsersCtrl', function UsersCtrl($scope, $rootScope, $s
   });
 
   $scope.signIn = function() {
-    $rootScope.current_user = UtilitiesFactory.findById(UsersFactory.users, $scope.userName, $scope.passWord);
+    $rootScope.current_user = UtilitiesFactory.findById($scope.users, $scope.userName, $scope.uId);
     if ($rootScope.current_user == null ) {
       event.preventDefault();
       alert("User Not Found!")
@@ -20,6 +22,6 @@ dalesBikeMania.controller('UsersCtrl', function UsersCtrl($scope, $rootScope, $s
       $location.path("/users/userid");
     }
     $scope.userName = null;
-    $scope.passWord = null;
+    $scope.uId = null;
   };
 });

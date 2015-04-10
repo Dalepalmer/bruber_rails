@@ -1,3 +1,4 @@
+
 <div class="second-navigation">
   <a ui-sref="view_user_profile">Profile</a>
   <a ui-sref="current_ticket">Current Ticket</a>
@@ -10,35 +11,36 @@
   <div class="row login">
     <div class="col-sm-12">
       <h1>New Ticket</h1>
-      <form class="form-horizontal" ng-submit="TicketsFactory.addTicket()" role="form">
+      <form class="form-horizontal" ng-submit="addTicket()" role="form">
         <div class="form-group">
           <label for="bike_location" class="col-sm-4">Bike Location</label>
           <div class="col-sm-6">
-            <input class="form-control" ng-model="TicketsFactory.ticketAddress" type="text" name="bike_location" /><br />
+            <input class="form-control" ng-model="ticketAddress" type="text" name="bike_location" /><br />
           </div>
         </div>
         <div class="form-group">
           <label for="location_notes" class="col-sm-4">Location Notes</label>
           <div class="col-sm-6">
-            <input class="form-control" ng-model="TicketsFactory.ticketLocation" type="text" name="location_notes" /><br />
+            <input class="form-control" ng-model="ticketLocation" type="text" name="location_notes" /><br />
           </div>
         </div>
       <div class="form-group">
         <label for="problem" class="col-sm-4">Problem</label>
         <div class="col-sm-6">
-          <input class="form-control" ng-model="TicketsFactory.ticketProblems" type="text" name="problem" /><br />
+          <input class="form-control" ng-model="ticketProblems" type="text" name="problem" /><br />
         </div>
       </div>
         <div class="form-group">
           <label for="bike" class="col-sm-4">Your Bike</label>
           <div class="col-sm-6">
-            <input class="form-control" ng-model="TicketsFactory.bike" type="text" name="bike" /><br />
+            <input class="form-control" ng-model="bike" type="text" name="bike" /><br />
           </div>
         </div>
         <div class="submit-container">
           <input class="submit-button" type="submit" value="Submit" />
         </div>
       </form>
+
     </div>
   </div>
 </div>
