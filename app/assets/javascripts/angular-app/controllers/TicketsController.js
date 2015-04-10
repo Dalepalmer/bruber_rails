@@ -1,12 +1,13 @@
-dalesBikeMania.controller('TicketsCtrl', function TicketsCtrl($scope, $stateParams, TicketsFactory) {
+dalesBikeMania.controller('TicketsCtrl', function TicketsCtrl($rootScope, $scope, $stateParams, TicketsFactory, $http) {
   $scope.tickets = TicketsFactory.tickets;
   $scope.TicketsFactory = TicketsFactory;
 
   $scope.addTicket = function() {
-    $http.post('/tickets', {customer_id: 1, repair_status: $scope.ticketAddress}).
+    $http.post('/tickets', { customer_id: 2, bicycle_id: 1, problem_id: 1, repair_status: "Posted"} ).
     success(function(data, status, headers, config) {
       // this callback will be called asynchronously
       // when the response is available
+      console.log('Posted!')
     }).
     error(function(data, status, headers, config) {
       // called asynchronously if an error occurs
