@@ -207,15 +207,18 @@ label {
   background-color: #EBE7DC;
   margin-top: 30px;
   margin-left: 15px;
+  display: block;
+
 }
+
+
 
 .tickets {
   border-left: 8px solid #FC9E60;
   border-right: 8px solid #FC9E60;
-  border-bottom: 8px solid #FC9E60;
+  border-top: 8px solid #FC9E60;
   background-color: #EBE7DC;
-  width: 70%;
-  height: 100%;
+  width: 75%;
   margin-right: auto;
   margin-left: auto;
 
@@ -237,8 +240,11 @@ label {
 }
 
 .ticket-info {
+  border-bottom: 8px solid #FC9E60;
   padding-left: 50px;
-  height: 100%;
+
+  display: block;
+
 }
 
 .details {

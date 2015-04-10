@@ -12,18 +12,16 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6 ticket-details">
+    <div ng-repeat="item in tickets | limitTo: 1 " class="col-md-6 ticket-details">
 
-  <ng-repeat="item in tickets | filter:{status:'!Completed'}" class="table table-bordered">
-
-
-
-          <p><span class="details">Address:</span> {{item.address}} <p>
-          <p><span class="details">Problem:</span> {{item.problem_notes}}<p>
-          <p><span class="details">Location Notes:</span> {{item.location_notes}}<p>
-          <p><span class="details">Status:</span> {{item.status}}<p>
-          <span ng-show="ticket.claimed">{{something.mechanic.name}}<p>
-          <span ng-show="ticket.claimed">{{something.something.timePickedUp}}<p>
-          <p><span class="details">User Rating:</span> {{item.rating_value}}<p>
+        <p><span class="details">Address:</span> 500 Dale's House <p>
+        <p><span class="details">Problem:</span> Broken Chain <p>
+        <p><span class="details">Location Notes:</span> Behind Garage <p>
+        <p><span class="details">Status:</span> {{item.repair_status}} <p>
+        <p><span class="details">Mechanic Name:</span> Tyler's Repair Service<p>
+        <p><span class="details">Time:</span> Eventually<p>
+        <p><span class="details">User Rating:</span> 5<p>
 
     </div>
+  </div>
+</div>
