@@ -2,9 +2,16 @@ dalesBikeMania.controller('TicketsCtrl', function TicketsCtrl($scope, $statePara
   $scope.tickets = TicketsFactory.tickets;
   $scope.TicketsFactory = TicketsFactory;
 
-  $scope.problemOptions = [
-    { label: 'Chain', value: 1 },
-    { label: 'Tire', value: 2 },
-    { label: 'Brakes', value: 3 }
-  ];
+  $scope.addTicket = function() {
+    $http.post('/tickets', {customer_id: 1, location_info: $scope.ticketAddress}).
+    success(function(data, status, headers, config) {
+      // this callback will be called asynchronously
+      // when the response is available
+    }).
+    error(function(data, status, headers, config) {
+      // called asynchronously if an error occurs
+      // or server returns response with an error status.
+    });
+  };
+
 });
