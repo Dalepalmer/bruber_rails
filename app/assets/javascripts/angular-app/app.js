@@ -51,6 +51,12 @@ dalesBikeMania.config(function($stateProvider, $urlRouterProvider) {
     controller: 'TicketsCtrl'
   });
 
+  $stateProvider.state('current_tickets', {
+    url: "/users/tickets/tickets",
+    templateUrl: "current_tickets.html",
+    controller: 'TicketsCtrl'
+  });
+
   $stateProvider.state('view_ticket_history', {
     url: "/users/tickets",
     templateUrl: "view_ticket_history.html",
