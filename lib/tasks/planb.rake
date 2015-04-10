@@ -10,14 +10,14 @@ namespace :planb do
   end
 
   task :claim_ticket => :environment do
-    ticket = Ticket.find(6)
+    ticket = Ticket.find(4)
     ticket.mechanic_id = 3
     ticket.repair_status = 'Claimed'
     ticket.save
   end
 
   task :close_ticket => :environment do
-    ticket = Ticket.find(6)
+    ticket = Ticket.find(4)
     ticket.repair_status = 'Completed'
     ticket.save
   end
