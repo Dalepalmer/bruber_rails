@@ -1,6 +1,6 @@
 <h1>Unclaimed Tickets</h1>
 <div class="row">
-  <table ng-repeat="item in tickets | filter:{status:'Posted'}" class="table table-bordered">
+  <table ng-repeat="item in tickets | filter: { repair_status: 'Posted' }" class="table table-bordered">
     <thead>
       <tr>
         <th>
@@ -11,11 +11,11 @@
     <tbody>
       <tr>
         <td>
-          Submitted By: {{item.user.name}}
-          Address: {{item.user.address}} <br>
-          Problem: {{item.problem_notes}}<br>
-          Location Notes: {{item.location_notes}}<br>
-          Status: {{item.status}}<br>
+          Submitted By: {{current_user.name}}<br>
+          Address: {{item.location}} <br>
+          Problem: {{item.problem_id}}<br>
+          Location Notes: Notes Go Here<br>
+          Status: {{item.repair_status}}<br>
           User Rating: {{item.user.rating_value}}<br>
         </td>
       </tr>
