@@ -78,7 +78,7 @@ dalesBikeMania.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider.state('mechanic_tickets', {
     url: "/mechanic_tickets",
     templateUrl: "mechanic_tickets.html",
-    controller: 'MechanicsCtrl'
+    controller: 'TicketsCtrl'
   });
 
 });
