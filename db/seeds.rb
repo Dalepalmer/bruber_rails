@@ -36,7 +36,7 @@ User.create({
   :provider => "imafake",
   :name => "Ima Fake",
   :email => "waldowv@yahoo.com",
-  :phone => "5202471239",
+  :phone => "5412311102",
   :password => "password",
   :encrypted_password => "password",
   :type => "Customer"
@@ -64,21 +64,21 @@ Problem.create({
 
 Ticket.create({
   :repair_status => "Posted",
-  :problem_id => 1
-  :customer_id => 4
+  :problem_id => 1,
+  :customer_id => 4,
   :location => "123 Fake St"
   })
 
 Ticket.create({
   :repair_status => "Posted",
-  :problem_id => 2
-  :customer_id => 4
+  :problem_id => 2,
+  :customer_id => 4,
   :location => "420 Snoop Dogg Lane"
   })
 
 Ticket.create({
   :repair_status => "Posted",
-  :problem_id => 3
-  :customer_id => 4
+  :problem_id => 3,
+  :customer_id => 4,
   :location => "867 Fivethreeohnine Ave"
   })
