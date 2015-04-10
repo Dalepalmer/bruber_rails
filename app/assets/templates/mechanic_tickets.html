@@ -8,7 +8,7 @@
 
 <div class="container">
   <div class="row tickets">
-    <ul ng-repeat="item in tickets | filter:{status:'Posted'}">
+    <ul ng-repeat="item in tickets | filter:{repair_status:'Posted'}">
       <li>
         <div class="col-sm-4 avatar">
 
@@ -16,11 +16,11 @@
         <div class="col-sm-8 ticket-info"
           <h3>Ticket Number: {{item.id}}</h3>
 
-          <p><span class="details">Submitted By:</span> {{item.user.name}}</p>
-          <p><span class="details">Address: </span>{{item.user.address}} </p>
-          <p><span class="details">Problem: </span>{{item.problem_notes}}</p>
-          <p><span class="details">Location Notes: </span>{{item.location_notes}}</p>
-          <p><span class="details">Status: </span>{{item.status}}</p>
+          <p><span class="details">Submitted By:</span> {{current_user.name}}</p>
+          <p><span class="details">Address: </span>{{item.location}} </p>
+          <p><span class="details">Problem: </span>{{item.problem_id}}</p>
+          <p><span class="details">Location Notes: </span></p>
+          <p><span class="details">Status: </span>{{item.repair_status}}</p>
           <p><span class="details">User Rating: </span>{{item.user.rating_value}}</p>
 
           <button ng-click="claimTicket()" class="md-button">
@@ -29,4 +29,5 @@
       </li>
     </ul>
   </div>
+
 </div>
