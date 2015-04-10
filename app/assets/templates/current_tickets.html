@@ -1,12 +1,13 @@
-<h1>Current Ticket</h1>
+<h1>All Tickets</h1>
 <div class="row">
-          {{ users }}
   <h4>My Tickets</h4>
-  <table ng-repeat="item in tickets | filter:{repair_status:'Claimed'}" class="table table-bordered">
+  {{tickets}}
+  <table ng-repeat="item in tickets" class="table table-bordered">
     <thead>
       <tr>
         <th>
           Ticket Number: {{item.id}}
+          {{ item }}
         </th>
       </tr>
     </thead>
@@ -17,11 +18,11 @@
           Problem: {{item.problem_notes}}<br>
           Location Notes: {{item.location_notes}}<br>
           Status: {{item.status}}<br>
-          <span ng-show="ticket.claimed">{{something.mechanic.name}}</span><br>
-          <span ng-show="ticket.claimed">{{something.something.timePickedUp}}</span><br>
+          <span ng-show="ticket.claimed">{{item.mechanic.name}}</span><br>
+          <span ng-show="ticket.claimed">{{item.something.timePickedUp}}</span><br>
           User Rating: {{item.rating_value}}<br>
 
-          <button ng-click="closeTicket(item)">Close Ticket</button>
+          <button ng-click="claimTicket(item)">Claim Ticket</button>
 
         </td>
       </tr>

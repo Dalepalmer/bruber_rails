@@ -1,4 +1,5 @@
 class TicketsController < ApplicationController
+  skip_before_filter  :verify_authenticity_token
 
   # GET /tickets, used when loggedin mechanics need to hunt for all the open tickets
   def index
