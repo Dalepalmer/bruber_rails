@@ -3,7 +3,7 @@ dalesBikeMania.controller('TicketsCtrl', function TicketsCtrl($scope, $statePara
   $scope.TicketsFactory = TicketsFactory;
 
   $scope.addTicket = function() {
-    $http.post('/tickets', {customer_id: 1, location_info: $scope.ticketAddress}).
+    $http.post('/tickets', {customer_id: 1, repair_status: $scope.ticketAddress}).
     success(function(data, status, headers, config) {
       // this callback will be called asynchronously
       // when the response is available
