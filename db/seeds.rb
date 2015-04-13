@@ -66,19 +66,22 @@ Ticket.create({
   :repair_status => "Posted",
   :problem_id => 1,
   :customer_id => 4,
-  :location => "123 Fake St"
+  :location => "123 Fake St",
+  :location_notes => "Garage"
   })
 
 Ticket.create({
   :repair_status => "Posted",
   :problem_id => 2,
   :customer_id => 4,
-  :location => "420 Snoop Dogg Lane"
+  :location => "420 Snoop Dogg Lane",
+  :location_notes => "Porch"
   })
 
 Ticket.create({
   :repair_status => "Posted",
   :problem_id => 3,
   :customer_id => 4,
-  :location => "867 Fivethreeohnine Ave"
+  :location => "867 Fivethreeohnine Ave",
+  :location_notes => "Bike Room"
   })
