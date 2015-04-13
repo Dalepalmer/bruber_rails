@@ -12,4 +12,8 @@ dalesBikeMania.controller('HomeCtrl', function HomeCtrl($rootScope, $scope, $sta
     $scope.tickets = data;
   });
 
+  $scope.popUp = function(thing) {
+    alert("You have clicked on " + thing.id);
+  }
+
 });
