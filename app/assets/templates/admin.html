@@ -1,0 +1,20 @@
+Hi
+<hr>
+Cyclists
+<ul ng-repeat="item in users">
+  <li ng-click="popUp(item)">{{item.name}}</li>
+</ul>
+<hr>
+Mechanics
+<ul ng-repeat="item in mechanics">
+  <li ng-click="popUp(item)">{{item.name}}</li>
+</ul>
+<hr>
+Tickets
+<ul ng-repeat="item in tickets">
+  <li ng-click="popUp(item)">{{item.id}}</li>
+  <li ng-click="popUp(item)">{{item.location}}</li>
+</ul>
+<hr>
+
+{{tickets}}

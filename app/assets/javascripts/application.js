@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require angular-app/lib/angular
 //= require angular-app/lib/angular-ui-router
+//= require angular-app/lib/angular-resource
 //= require angular-rails-templates
 
 //= require angular-app/app

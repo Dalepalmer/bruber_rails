@@ -1,19 +1,13 @@
-dalesBikeMania.controller('UsersCtrl', function UsersCtrl($scope, $rootScope, $stateParams, $location, UsersFactory, UtilitiesFactory, $http) {
+dalesBikeMania.controller('UsersCtrl', function UsersCtrl($rootScope, $scope, $stateParams, UsersFactory, UtilitiesFactory, $http, $location) {
   $scope.UtilitiesFactory = UtilitiesFactory
-  $scope.users = [];
 
-  $http.get('/customers.json').
-  success(function(data, status, headers, config) {
+  UsersFactory.query(function(data) {
     $scope.users = data;
-    // when the response is available
-  }).
-  error(function(data, status, headers, config) {
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
+    console.log("Got All Users")
   });
 
   $scope.signIn = function() {
-    $rootScope.current_user = UtilitiesFactory.findById($scope.users, $scope.userName, $scope.uId);
+    $rootScope.current_user = UtilitiesFactory.jankyLogin($scope.users, $scope.userName, $scope.uId);
     if ($rootScope.current_user == null ) {
       event.preventDefault();
       alert("User Not Found!")
