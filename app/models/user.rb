@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   # Include default devise modules.
 
+  validates :email, :presence => true
+  # validates :phone, :presence => true
+  validates :password, :presence => true
+  validates :password_confirmation, :presence => true
 end

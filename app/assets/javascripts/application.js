@@ -21,4 +21,3 @@
 //= require_tree ./angular-app/services
 //= require_tree ./angular-app/controllers
 //= require_tree .
-//= require_tree ../templates

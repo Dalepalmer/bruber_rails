@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <html ng-app="dalesBikeMania">
+  <html>
 <html>
 <head>
   <title>Bike Repair</title>
@@ -11,22 +11,24 @@
 <body>
 
   <nav>
-    <div class="title"><a ui-sref="home">Br&uuml;ber</a></div>
+    <div class="title"><%= link_to "BrÜber", root_path %></li></div>
     <li><%= link_to "About Us", contact_index_path  %></li>
     <li><%= link_to "Contact Us", contact_index_path %></li>
-    <li><%= link_to "Home", root_path %></li>
+    <% if !current_user %>
+    <li><%= link_to "Sign Up", new_user_registration_path %></li>
+    <% end %>
     <% if current_user %>
-    <li><%= link_to "Sign Out", destroy_user_session_path %></a></li>
-    <li><%= link_to "My Profile" %></a></li>
+    <li><%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %></a></li>
+    <li><%= link_to "My Profile"  %></a></li>
     <li><%= link_to "Current Ticket" %></a></li>
-    <li><%= link_to "New Ticket" %></a></li>
+    <li><%= link_to "New Ticket", new_ticket_path %></a></li>
     <% end %>
 
   </nav>
 
   <header>
   </header>
- <%= yield %> 
+ <%= yield %>
 
 
 <p class="notice"><%= notice %></p>

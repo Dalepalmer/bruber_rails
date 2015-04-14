@@ -12,8 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
+ *= require reset
+ *= require styles
  */
-
- @import 'bootstrap';
- @import 'reset';
- @import 'styles';
