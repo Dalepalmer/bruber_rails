@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :customers
+  resources :bicycles
   resources :contact, :only => [:index]
   resources :tickets
-  resources :bicycles
   resources :mechanics
   resources :problems
 end

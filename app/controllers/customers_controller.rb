@@ -27,6 +27,10 @@ class CustomersController < ApplicationController
   def edit
   end
 
+  def show
+    @customer = Customer.find(params[:id])
+  end
+
   # POST /customers
   def create
     @customer = Customer.new(customer_params)

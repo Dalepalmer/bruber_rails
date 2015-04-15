@@ -1,0 +1,19 @@
+<%= render 'layouts/errors', object: @bicycle %>
+
+
+
+
+<div class="container">
+  <div class="row login">
+    <div class="col-sm-12">
+      <h1>Add a Bicycle to your profile</h1>
+        <h1> Create a Repair Ticket! </h1>
+        <%= form_for @bicycle do |f| %>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+        <%= f.hidden_field :customer_id, value: current_user.id %>
+        <%= f.submit "Create" %>
+        <% end %>
+    </div>
+  </div>
+</div>

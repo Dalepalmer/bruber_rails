@@ -19,8 +19,8 @@
     <% end %>
     <% if current_user %>
     <li><%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %></a></li>
-    <li><%= link_to "My Profile"  %></a></li>
-    <li><%= link_to "Current Ticket" %></a></li>
+    <li><%= link_to "My Profile", customer_path(@customer)  %></a></li>
+    <li><%= link_to "Current Ticket"  %></a></li>
     <li><%= link_to "New Ticket", new_ticket_path %></a></li>
     <% end %>
 
