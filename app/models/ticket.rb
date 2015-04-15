@@ -4,8 +4,10 @@ class Ticket < ActiveRecord::Base
   belongs_to :mechanic
   belongs_to :problem
   has_many :messages
+  before_save :repair_status => "Claimed"
 
-  validates :repair_status, :presence => true
+
+  # validates :repair_status, :presence => true
 
   # after_create :generate_created_message
   # before_update :generate_update_message  #note:before_update is deprecated!
