@@ -11,28 +11,20 @@
 <body>
 
   <nav>
-    <div class="title"><%= link_to "BrÜber", root_path %></li></div>
-    <li><%= link_to "About Us", contact_index_path  %></li>
-    <li><%= link_to "Contact Us", contact_index_path %></li>
-    <% if !current_user %>
-    <li><%= link_to "Sign Up", new_user_registration_path %></li>
-    <% end %>
-    <% if current_user %>
-    <li><%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %></a></li>
-    <li><%= link_to "My Profile", customer_path(@customer)  %></a></li>
-    <li><%= link_to "Current Ticket"  %></a></li>
-    <li><%= link_to "New Ticket", new_ticket_path %></a></li>
-    <% end %>
-
+    <div class="container-fluid">
+      <div class="title"><%= link_to "BrÜber", root_path %></li></div>
+      <li><%= link_to "About Us", contact_index_path  %></li>
+      <li><%= link_to "Contact Us", contact_index_path %></li>
+      </div>
   </nav>
 
   <header>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
   </header>
  <%= yield %>
 
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
 </body>
 </html>

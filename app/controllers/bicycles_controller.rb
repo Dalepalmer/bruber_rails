@@ -28,18 +28,19 @@ class BicyclesController < ApplicationController
 
   # POST /bicycles
   def create
-    @bicycle = Bicycle.new(bicycle_params)
+    @Customer = Customer.find(current_user.id)
+    @bicycle = @Customer.bicycles.new(bicycle_params)
 
     if @bicycle.save
-      respond_to do |format|
-        format.html
-        format.json { render json: @bicycle, status: 201 }
-      end
-    else
-      respond_to do |format|
-        format.html { render 'new' }
-        format.json { render json: @bicycle.errors, status: 422 }
-      end
+        redirect_to customer_path(current_user)
+      # respond_to do |format|
+      #   format.html
+      #   format.json { render json: @bicycle, status: 201 }
+    # else
+    #   respond_to do |format|
+    #     format.html { render 'new' }
+    #     format.json { render json: @bicycle.errors, status: 422 }
+
     end
   end
 
@@ -60,16 +61,18 @@ class BicyclesController < ApplicationController
 
   # DELETE /bicycles/1
   def destroy
+    @bicycle = Bicycle.find(params[:id])
     @bicycle.destroy
-    respond_to do |format|
-      format.json { head :no_content }
-    end
+    redirect_to customer_path(current_user)
+    # respond_to do |format|
+    #   format.json { head :no_content }
+
   end
 
   private
 
     # Only allow a trusted parameter "white list" through.
     def bicycle_params
-      
+      params.require(:bicycle).permit(:description, :customer_id, :bicycle_id)
     end
 end

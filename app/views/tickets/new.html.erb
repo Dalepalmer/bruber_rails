@@ -1,3 +1,10 @@
+<div class="second-navigation">
+  <%= link_to "PHome", root_path %>
+  <%= link_to "Profile", customer_path(current_user) %>
+  <%= link_to "My Repair Ticket"%>
+  <%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %>
+</div>
+
 <%= render 'layouts/errors', object: @ticket %>
 
 
@@ -8,13 +15,13 @@
         <h1> Create a Repair Ticket! </h1>
         <%= form_for @ticket do |f| %>
         <%= f.label :location %>
-        <%= f.text_field :location %>
+        <%= f.text_field :location, :class => "form-control" %>
         <%= f.label :location_notes %>
-        <%= f.text_area :location_notes %>
+        <%= f.text_area :location_notes, :class => "form-control" %>
         <%= f.label :problem %>
-        <%= f.text_field :problem %>
+        <%= f.text_field :problem, :class => "form-control" %>
         <%= f.label :bicycle_id %>
-        <%= f.number_field :bicycle_id %>
+        <%= f.number_field :bicycle_id, :class => "form-control" %>
         <%= f.submit "Create" %>
         <% end %>
     </div>

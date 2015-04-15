@@ -1,13 +1,17 @@
+<div class="second-navigation">
+  <%= link_to "Profile", customer_path(current_user) %>
+  <%= link_to "Create Ticket", new_ticket_path %>
+  <%= link_to "My Repair Ticket"%>
+  <%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %>
+</div>
+
+
 <%= render 'layouts/errors', object: @bicycle %>
-
-
-
 
 <div class="container">
   <div class="row login">
     <div class="col-sm-12">
       <h1>Add a Bicycle to your profile</h1>
-        <h1> Create a Repair Ticket! </h1>
         <%= form_for @bicycle do |f| %>
         <%= f.label :description %>
         <%= f.text_field :description %>

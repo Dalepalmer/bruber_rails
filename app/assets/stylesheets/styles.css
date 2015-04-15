@@ -192,6 +192,15 @@ label {
   text-align: center;
 }
 
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    background {
+      background-color: red; 
+      }
+}
+
 .iam {
   font-family: 'Raleway', sans-serif;
   font-size: 40px;
@@ -412,6 +421,12 @@ option {
 
 .ticket-details {
   margin-left: 20%;
+}
+
+.blue-border {
+  width: 100%;
+  height: 40px;
+  background-color: #5C7C8D;
 }
 /*dark blue: 154765
 regular blue: 5C7C8D

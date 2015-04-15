@@ -1,0 +1,33 @@
+<div class="second-navigation">
+  <%= link_to "Home", root_path %>
+  <%= link_to "Create Ticket", new_ticket_path %>
+  <%= link_to "My Repair Ticket"%>
+  <%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %>
+</div>
+
+<div class="container">
+  <div class="row profile">
+    <h3 class="name"><%=current_user.name%></h3>
+
+  <div class="col-md-4 profile-picture">
+  </div>
+  <div class="col-md-4 profile-details">
+    <p><span class="details">Email:</span><%=current_user.email%></p>
+    <p><span class="details">Phone:</span><%=current_user.phone%></p>
+    <p><span class="details">Card:</span>************5054</p>
+
+    <h2> Your Bikes </h2>
+
+      <% current_user.bicycles.each do |bicycle| %>
+    <ul>
+        <li><%= bicycle.description %> <%= link_to "Edit", edit_bicycle_path(bicycle) %>
+        <%= link_to "Delete", bicycle_path(bicycle), :data => {:confirm => "You sure?",
+          :method => "delete"} %> </li>
+    </ul>
+    <% end %>
+  </div>
+    <div class="col-md-4 buttons">
+      <%= link_to "Add Bicycle", new_bicycle_path, :class => "md-button" %>
+    </div>
+  </div>
+</div>
