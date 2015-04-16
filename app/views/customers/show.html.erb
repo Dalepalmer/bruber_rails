@@ -20,8 +20,14 @@
 
       <% current_user.bicycles.each do |bicycle| %>
     <ul>
-        <li><%= bicycle.description %> <%= link_to "Edit", edit_bicycle_path(bicycle) %>
-        <%= link_to "Delete", bicycle_path(bicycle), :data => {:confirm => "You sure?",
+        <li><%= bicycle.make %></li>
+        <li><%= bicycle.model %></li>
+        <li><%= bicycle.year %></li>
+        <li><%= bicycle.description %>
+        <br>
+        <br>
+        <%= link_to "Edit", edit_bicycle_path(bicycle), class: "md-button" %> |
+        <%= link_to "Delete", bicycle_path(bicycle), class: "md-button", :data => {:confirm => "You sure?",
           :method => "delete"} %> </li>
     </ul>
     <% end %>

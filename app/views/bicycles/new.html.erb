@@ -14,9 +14,15 @@
       <h1>Add a Bicycle to your profile</h1>
         <%= form_for @bicycle do |f| %>
         <%= f.label :description %>
-        <%= f.text_field :description %>
+        <%= f.text_field :description, class: "form-control" %>
+        <%= f.label :make %>
+        <%= f.text_field :make, class: "form-control"  %>
+        <%= f.label :model %>
+        <%= f.text_field :model, class: "form-control"  %>
+        <%= f.label :year %>
+        <%= f.text_field :year, class: "form-control"  %>
         <%= f.hidden_field :customer_id, value: current_user.id %>
-        <%= f.submit "Create" %>
+        <%= f.submit "Create", class: "form-control" %>
         <% end %>
     </div>
   </div>
