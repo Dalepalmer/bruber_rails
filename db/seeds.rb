@@ -1,6 +1,4 @@
 User.create({
-  :uid => "bruber",
-  :provider => "bruber",
   :name => "BRUBER_AUTO_MESSAGE",
   :email => "mcgruber@bruber.com",
   :phone => "5412311102",
@@ -10,8 +8,6 @@ User.create({
   })
 
 User.create({
-  :uid => "dale",
-  :provider => "dale",
   :name => "Dale Palmer",
   :email => "dap38@zips.uakron.edu",
   :phone => "3308191550",
@@ -21,8 +17,6 @@ User.create({
 })
 
 User.create({
-  :uid => "tyler",
-  :provider => "tyler",
   :name => "Tyler Brown",
   :email => "tylerjbrown192@gmail.com",
   :phone => "5035771899",
@@ -32,8 +26,6 @@ User.create({
 })
 
 User.create({
-  :uid => "imafake",
-  :provider => "imafake",
   :name => "Ima Fake",
   :email => "waldowv@yahoo.com",
   :phone => "5412311102",
