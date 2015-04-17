@@ -7,10 +7,10 @@ class TicketsController < ApplicationController
   def index
     @tickets = Ticket.all
     @users = User.all
-    respond_to do |format|
-      format.html
-      format.json { render json: @tickets }
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: @tickets }
+    # end
   end
 
   # GET /tickets/1

@@ -1,0 +1,33 @@
+<h1>All Tickets</h1>
+<div class="content">
+<div class="row">
+  <h4>My Tickets</h4>
+  <% @tickets.each do |ticket| %>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>
+          Ticket Number: <%= ticket.id %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Address: <%= ticket.location %> <br>
+          Problem: <%= ticket.problem %> <br>
+          Location Notes: <%= ticket.location_notes %> <br>
+          Status:  <%= ticket.repair_status %> <br>
+          <span class="ticket.claimed"> <%= ticket.mechanic_id %> </span><br>
+          <span class="ticket.claimed"> <%= ticket.mechanic_id %> </span><br>
+          User Rating: 5 <br>
+
+          <button>Claim Ticket</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <% end %>
+</div>
+</div>
