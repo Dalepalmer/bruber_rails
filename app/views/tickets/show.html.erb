@@ -1,0 +1,30 @@
+<div class="second-navigation">
+  <%= link_to "Home", root_path %>
+  <%= link_to "Profile", customer_path(current_user) %>
+  <%= link_to "My Repair Ticket"%>
+  <%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %>
+</div>
+
+<%= render 'layouts/errors', object: @ticket %>
+
+<div class="bikeimage">
+    </div>
+
+
+<h1 class="current-ticket">Current Ticket</h1>
+
+<div class="container">
+  <div class="row">
+    <div ng-repeat="item in tickets | limitTo: 1 " class="col-md-6 ticket-details">
+
+        <p><span class="details">Address:</span> <%= @ticket.location %> <p>
+        <p><span class="details">Location Notes:</span> <%= @ticket.location_notes %> <p>
+        <p><span class="details">Problem:</span> <%= @ticket.problem_id %> <p>
+        <p><span class="details">Status:</span> <%= @ticket.location_notes %> <p>
+        <p><span class="details">Mechanic Name:</span> <%= @ticket.mechanic_id %> <p>
+        <p><span class="details">Time:</span> <%= Time.now %><p>
+        <p><span class="details">User Rating:</span> 5<p>
+
+    </div>
+  </div>
+</div>

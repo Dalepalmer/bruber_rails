@@ -16,7 +16,7 @@ class TicketsController < ApplicationController
   # GET /tickets/1
   def show
     @ticket = Ticket.find(params[:id])
-    @problems = Problem.find_by(ticket_id: @ticket.id)
+    # @problems = Problem.find_by(ticket_id: @ticket.id)
     respond_to do |format|
       format.html
       format.json { render json: [@ticket, @ticket.problem, @ticket.mechanic, @ticket.customer, @ticket.bicycle, @ticket.location] }
@@ -37,10 +37,11 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
     @problems = Problem.all
     if @ticket.save
-      respond_to do |format|
-        format.html { render json: [@ticket, @problems], status: 201 }
-        format.json
-      end
+      redirect_to ticket_path(@ticket)
+      # respond_to do |format|
+      #   format.html { render json: [@ticket, @problems], status: 201 }
+      #   format.json
+      # end
     else
       respond_to do |format|
         format.html { render 'new' }
