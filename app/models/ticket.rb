@@ -4,8 +4,19 @@ class Ticket < ActiveRecord::Base
   belongs_to :mechanic
   belongs_to :problem
   has_many :messages
-  before_save :repair_status => "Claimed"
+  before_save :post_repair_status
 
+  def post_repair_status
+    self.repair_status = "Posted"
+  end
+
+  def claim_repair_status
+    self.repair_status = "Claimed"
+  end
+
+  def claim_repair_status
+    self.repair_status = "Closed"
+  end
 
   # validates :repair_status, :presence => true
 
