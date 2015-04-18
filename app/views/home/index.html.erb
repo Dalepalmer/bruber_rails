@@ -1,14 +1,10 @@
 
 <% if !current_user %>
 <div class="second_nav">
-  <div class="iam"><h4>I am a....</h4></div>
+  <div class="iam"></div>
   <div class="buttons">
     <div class="customer stuff">
-      <%= link_to "Customer", new_user_session_path, :class => "button cta-button" %>
-    </div>
-
-    <div class="mechanic stuff">
-    <%= link_to "Mechanic", new_user_session_path, :class => "button cta-button" %>
+      <%= link_to "Sign In", new_user_session_path, :class => "button cta-button" %>
     </div>
   </div>
 </div>

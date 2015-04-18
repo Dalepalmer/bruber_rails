@@ -2,6 +2,8 @@
 <div class="content">
 <div class="row">
   <h4>My Tickets</h4>
+<div class='blue-border'>
+</div>
   <% @tickets.each do |ticket| %>
   <table class="table table-bordered">
     <thead>
@@ -18,8 +20,6 @@
           Problem: <%= ticket.problem %> <br>
           Location Notes: <%= ticket.location_notes %> <br>
           Status:  <%= ticket.repair_status %> <br>
-          <span class="ticket.claimed"> <%= ticket.mechanic_id %> </span><br>
-          <span class="ticket.claimed"> <%= ticket.mechanic_id %> </span><br>
           User Rating: 5 <br>
 
           <button>Claim Ticket</button>
