@@ -9,8 +9,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'rest-client'
-gem 'angular-rails-templates'
-gem 'bower-rails'
+
 
 group :production do
   gem 'rails_12factor'
