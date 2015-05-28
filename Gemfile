@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'rest-client'
-
+gem 'tzinfo-data'
 
 group :production do
   gem 'rails_12factor'
