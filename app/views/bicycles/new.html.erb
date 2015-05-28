@@ -13,7 +13,7 @@
     <div class="col-sm-12">
       <h1>Add a Bicycle to your profile</h1>
         <%= form_for @bicycle do |f| %>
-        <%= f.label :description %>
+        <%= f.label :description, value: "Description: Color, stickers, anything unique" %>
         <%= f.text_field :description, class: "form-control" %>
         <%= f.label :make %>
         <%= f.text_field :make, class: "form-control"  %>
