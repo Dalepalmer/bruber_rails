@@ -20,10 +20,10 @@
 
       <% current_user.bicycles.each do |bicycle| %>
     <ul>
-        <li><%= bicycle.make %></li>
-        <li><%= bicycle.model %></li>
-        <li><%= bicycle.year %></li>
-        <li><%= bicycle.description %>
+        <li>Make: <%= bicycle.make %></li>
+        <li>Model: <%= bicycle.model %></li>
+        <li>Year: <%= bicycle.year %></li>
+        <li>Description: <%= bicycle.description %>
         <br>
         <br>
         <%= link_to "Edit", edit_bicycle_path(bicycle), class: "md-button" %> |
