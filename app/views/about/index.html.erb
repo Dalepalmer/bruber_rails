@@ -1,0 +1,27 @@
+<h1>About Bruber</h1>
+
+<div class="second-navigation">
+  <%= link_to "Home", root_path %>
+  <%= link_to "Profile", customer_path(current_user) %>
+  <%= link_to "My Repair Ticket", ticket_path(current_user)%>
+  <%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %>
+</div>
+
+<div class="container">
+	<div class="content">
+	  <body>
+	  	<h1> Mission: </h1>
+	  	<p><h2>Bruber's goal is to bring together people who commute by bicycle with those who have the skills and expertise to keep them riding day after day.<h2></p>
+	  	<h1> Services: </h1>
+	  	<ul>
+	  		<li> Convenient Mobile Repair </li>
+	  		<br>
+	  		<br>
+	  		<li> Corporate Memberships </li>
+	  		<br>
+	  		<br>
+	  		<li> Sponsored Repair Events </li>
+	  	</ul>
+	  </body>
+	</div>
+</div>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :customers
   resources :bicycles
   resources :contact, :only => [:index]
+  resources :about, :only => [:index]
   resources :tickets
   resources :mechanics
   resources :problems
