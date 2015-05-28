@@ -24,6 +24,7 @@ class BicyclesController < ApplicationController
 
   # GET /bicycles/1/edit
   def edit
+    @bicycle = Bicycle.find(params[:id])
   end
 
   # POST /bicycles

@@ -12,12 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require angular-app/lib/angular
-//= require angular-app/lib/angular-ui-router
-//= require angular-app/lib/angular-resource
-//= require angular-rails-templates
 
-//= require angular-app/app
-//= require_tree ./angular-app/services
-//= require_tree ./angular-app/controllers
-//= require_tree .
