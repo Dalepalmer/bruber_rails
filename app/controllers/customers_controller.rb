@@ -10,7 +10,6 @@ class CustomersController < ApplicationController
 
   # GET /customers/1
   def show
-    binding.pry
     @customer = Customer.find(params[:customer_id])
     @bicycles = @customer.bicycles
     respond_to do |format|

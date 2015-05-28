@@ -1,7 +1,9 @@
 <div class="second-navigation">
   <%= link_to "Home", root_path %>
   <%= link_to "Create Ticket", new_ticket_path %>
+  <% if current_user.tickets %>
   <%= link_to "My Repair Ticket", ticket_path(current_user)%>
+  <% end %>
   <%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %>
 </div>
 
