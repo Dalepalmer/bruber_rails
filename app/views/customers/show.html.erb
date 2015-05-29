@@ -19,7 +19,7 @@
     <p><span class="details">Card:</span>************5054</p>
 
     <h2> Your Bikes </h2>
-      <% if current_user.bicyles %>
+      <% if current_user.bicycles %>
       <% current_user.bicycles.each do |bicycle| %>
     <ul>
         <li>Make: <%= bicycle.make %></li>
