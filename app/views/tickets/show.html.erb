@@ -1,7 +1,7 @@
 <div class="second-navigation">
   <%= link_to "Home", root_path %>
   <%= link_to "Profile", customer_path(current_user) %>
-  <%= link_to "My Repair Ticket", ticket_path(current_user)%>
+  <%= link_to "My Repair Ticket", tickets_path %>
   <%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %>
 </div>
 
@@ -9,7 +9,6 @@
 
 <div class="bikeimage">
     </div>
-
 
 <h1 class="current-ticket">Current Ticket</h1>
 
@@ -29,3 +28,9 @@
     </div>
   </div>
 </div>
+
+<% else %>
+
+  <p> You don't have any tickets </p>
+
+<% end %>
