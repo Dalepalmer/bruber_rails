@@ -19,7 +19,7 @@
     <p><span class="details">Card:</span>************5054</p>
 
     <h2> Your Bikes </h2>
-
+      <% if current_user.bicyles %>
       <% current_user.bicycles.each do |bicycle| %>
     <ul>
         <li>Make: <%= bicycle.make %></li>
@@ -32,6 +32,9 @@
         <%= link_to "Delete", bicycle_path(bicycle), class: "md-button", :data => {:confirm => "You sure?",
           :method => "delete"} %> </li>
     </ul>
+    <% end %>
+    <% else %>
+    <%= "You have no bicycles associated with you account yet" %>
     <% end %>
   </div>
     <div class="col-md-4 buttons">
