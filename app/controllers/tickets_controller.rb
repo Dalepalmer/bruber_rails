@@ -1,26 +1,15 @@
 class TicketsController < ApplicationController
   skip_before_filter  :verify_authenticity_token
 
-  skip_before_filter  :verify_authenticity_token
-
   # GET /tickets, used when loggedin mechanics need to hunt for all the open tickets
   def index
-    @tickets = Ticket.all
-    @users = User.all
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render json: @tickets }
-    # end
+    @user = current_user
+    @tickets = @user.tickets
   end
 
   # GET /tickets/1
   def show
     @ticket = Ticket.find(params[:id])
-    # @problems = Problem.find_by(ticket_id: @ticket.id)
-    respond_to do |format|
-      format.html
-      format.json { render json: [@ticket, @ticket.problem, @ticket.mechanic, @ticket.customer, @ticket.bicycle, @ticket.location] }
-    end
   end
 
   # GET /tickets/new
@@ -69,9 +58,6 @@ class TicketsController < ApplicationController
   # DELETE /tickets/1
   def destroy
     @ticket.destroy
-    respond_to do |format|
-      format.json { head :no_content }
-    end
   end
 
   private
