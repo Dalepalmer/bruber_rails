@@ -1,11 +1,4 @@
-<div class="second-navigation">
-  <%= link_to "Home", root_path %>
-  <%= link_to "Create Ticket", new_ticket_path %>
-  <% if current_user.tickets %>
-  <%= link_to "My Repair Ticket", ticket_path(current_user)%>
-  <% end %>
-  <%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %>
-</div>
+<%= render "layouts/navbar2" %>
 
 <div class="container">
   <div class="row profile">
@@ -39,6 +32,9 @@
   </div>
     <div class="col-md-4 buttons">
       <%= link_to "Add Bicycle", new_bicycle_path, :class => "md-button" %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to "Create a Repair Ticket", new_ticket_path, :class => "md-button" %>
     </div>
   </div>
 </div>

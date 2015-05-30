@@ -10,12 +10,7 @@
 </div>
 <% end %>
   <% if current_user %>
-<div class="second-navigation">
-  <%= link_to "My Profile", customer_path(current_user) %>
-  <%= link_to "New Ticket", new_ticket_path %>
-  <%= link_to "My Ticket", tickets_path %>
-  <%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %>
-</div>
+<%= render "layouts/navbar2" %>
   <% end %>
 <div class="content">
   <h1> We're here to help get you rolling when it's most convenient! </h1>
