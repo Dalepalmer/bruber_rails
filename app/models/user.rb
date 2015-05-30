@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   # Include default devise modules.
 
   validates :email, :presence => true
-  # validates :phone, :presence => true
+  validates :phone, :presence => true
   validates :password, :presence => true
   validates :password_confirmation, :presence => true
 end
