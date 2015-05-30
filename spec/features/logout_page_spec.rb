@@ -15,7 +15,6 @@ describe "the sign out a user process" do
   it "confirms a user has logged out" do
     visit "/"
     click_on "Sign Out"
-    click_on "Customer"
-    expect(page). to have_content "Log in"
+    expect(page). to have_content "Sign In"
   end
 end

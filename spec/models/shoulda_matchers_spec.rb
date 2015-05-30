@@ -29,7 +29,6 @@ describe Ticket do
   it { should belong_to :mechanic }
   it { should belong_to :problem }
   it { should belong_to :customer }
-  it { should validate_presence_of(:repair_status)}
 end
 
 describe Problem do
