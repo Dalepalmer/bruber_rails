@@ -1,10 +1,6 @@
 <h1>Contact Us</h1>
 
-<div class="second-navigation">
-  <%= link_to "Profile", customer_path(current_user) %>
-  <%= link_to "My Repair Ticket", ticket_path(current_user)%>
-  <%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %>
-</div>
+<%= render "layouts/navbar2" %>
 
 <div class="container">
 <div class="content">

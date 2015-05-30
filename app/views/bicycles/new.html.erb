@@ -1,9 +1,4 @@
-<div class="second-navigation">
-  <%= link_to "Profile", customer_path(current_user) %>
-  <%= link_to "Create Ticket", new_ticket_path %>
-  <%= link_to "My Repair Ticket"%>
-  <%= link_to "Sign Out", destroy_user_session_path, :method => "DELETE" %>
-</div>
+<%= render "layouts/navbar2" %>
 
 <%= render 'layouts/errors', object: @bicycle %>
 
