@@ -33,8 +33,15 @@
     <div class="col-md-4 buttons">
       <%= link_to "Add Bicycle", new_bicycle_path, :class => "md-button" %>
     </div>
-    <div class="col-md-4">
+    <br>
+    <br>
+    <br>
+    <% if @bike %>
+    <div class="col-md-4 buttons">
       <%= link_to "Create a Repair Ticket", new_ticket_path, :class => "md-button" %>
     </div>
+    <% else %>
+    <h1> Please add a bicycle to your profile </h1>
+    <% end %>
   </div>
 </div>
