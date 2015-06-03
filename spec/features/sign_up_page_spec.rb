@@ -42,7 +42,7 @@ describe "the add a user process" do
     expect(page).to have_content 'Email can\'t be blank'
   end
 
-  it "displays errors when leaving email blank" do
+  it "displays errors when leaving phone blank" do
     user = FactoryGirl.build(:user)
     visit new_user_registration_path
     fill_in "Email", with: user.email
