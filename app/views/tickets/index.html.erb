@@ -1,5 +1,6 @@
 <h1>All Tickets</h1>
 <div class="content">
+<% if !@tickets == [] %>
 <div class="row">
   <h4>My Tickets</h4>
 <div class='blue-border'>
@@ -30,4 +31,7 @@
   </table>
   <% end %>
 </div>
+  <% else %>
+    <h1> There are no repair tickets yet </h1>
+  <% end %>
 </div>
