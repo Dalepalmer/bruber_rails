@@ -60,7 +60,7 @@ nav a:hover {
 }
 
 header {
-  background-image: url('cutmypic.png');
+  background-image: asset-data-url('cutmypic.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-color: #EBE7DC;
@@ -200,7 +200,7 @@ label {
 }
 
 .avatar {
-  background-image: url('avatar-placeholder.png');
+  background-image: asset-data-url('avatar-placeholder.png');
   width: 100px;
   height: 100px;
   background-size: cover;
@@ -367,7 +367,7 @@ label {
 }
 
 .profile-picture {
-  background-image: url('avatar-placeholder.png');
+  background-image: asset-data-url('avatar-placeholder.png');
   width: 100px;
   height: 100px;
   background-size: cover;
